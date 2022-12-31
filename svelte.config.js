@@ -32,6 +32,7 @@ const config = {
 		alias: {
 			$styles: 'src/lib/scss/index.scss',
 			$components: 'src/lib/components',
+			$directives: 'src/directives',
 		},
 	},
 

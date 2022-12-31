@@ -14,3 +14,17 @@
 		}
 	}
 }
+
+// Browser Compatibility
+@mixin property-with-prefix($prop, $value) {
+	-webkit-#{$prop}: #{$value};
+	-moz-#{$prop}: #{$value};
+	-ms-#{$prop}: #{$value};
+	-o-#{$prop}: #{$value};
+	#{$prop}: #{$value};
+}
+
+// Transition
+@mixin transition($attr, $duration, $timing-function) {
+	@include property-with-prefix(transition, $attr $duration $timing-function);
+}

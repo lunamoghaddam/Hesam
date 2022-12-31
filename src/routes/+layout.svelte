@@ -5,4 +5,12 @@
 </script>
 
 <Nav />
-<slot />
+<div class="container">
+  <slot />
+</div>
+
+<style lang="scss">
+  .container {
+    margin-top: 99px;
+  }
+</style>
