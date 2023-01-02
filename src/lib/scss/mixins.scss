@@ -1,0 +1,38 @@
+// Responsive Design
+@mixin breakpoint($point) {
+	@if $point == large {
+		@media only screen and (min-width: 1366px) {
+			@content;
+		}
+	} @else if $point == desktop {
+		@media only screen and (min-width: 1024px) {
+			@content;
+		}
+	} @else if $point == tablet {
+		@media only screen and (min-width: 600px) {
+			@content;
+		}
+	}
+}
+
+@mixin glass-effect($color, $blur: 10px) {
+	background: rgba($color, 0.5);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur($blur);
+	-webkit-backdrop-filter: blur($blur);
+	border: 1px solid rgba($color, 0.75);
+}
+
+// Browser Compatibility
+@mixin property-with-prefix($prop, $value) {
+	-webkit-#{$prop}: #{$value};
+	-moz-#{$prop}: #{$value};
+	-ms-#{$prop}: #{$value};
+	-o-#{$prop}: #{$value};
+	#{$prop}: #{$value};
+}
+
+// Transition
+@mixin transition($attr, $duration, $timing-function) {
+	@include property-with-prefix(transition, $attr $duration $timing-function);
+}

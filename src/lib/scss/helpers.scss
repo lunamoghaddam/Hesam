@@ -1,0 +1,53 @@
+@import './mixins';
+@import './variables';
+
+.row {
+	display: flex;
+	flex-direction: row;
+}
+
+.col {
+	display: flex;
+	flex-direction: column;
+}
+
+.ai-c {
+	align-items: center;
+}
+
+.ai-s {
+	align-items: flex-start;
+}
+
+.ai-e {
+	align-items: flex-end;
+}
+
+.jc-c {
+	justify-content: center;
+}
+
+.jc-s {
+	justify-content: flex-start;
+}
+
+.jc-e {
+	justify-content: flex-end;
+}
+
+.no-select {
+	@include property-with-prefix(user-select, none);
+	-webkit-touch-callout: none;
+}
+
+.no-select-img {
+	@extend .no-select;
+	pointer-events: none;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.glass {
+	@include glass-effect($on-surface);
+}

@@ -1,0 +1,51 @@
+@import './helpers';
+@import './mixins';
+
+.btn {
+	@extend .row, .ai-c, .jc-c;
+	border: none;
+	padding: 1rem 2rem;
+	font-weight: 600;
+	cursor: pointer;
+
+	@include transition(all, 0.3s, ease-in-out);
+
+	&.selected {
+		cursor: default;
+	}
+
+	&:disabled {
+		background-color: darken($surface, 20);
+		cursor: not-allowed;
+	}
+
+	&:not(:disabled) {
+		&.link {
+			background-color: transparent;
+			color: $surface;
+
+			&:not(.selected) {
+				&:enabled:hover,
+				&:enabled:active {
+					background-color: darken($on-surface, 10);
+				}
+			}
+
+			&.primary {
+				color: $primary;
+
+				&:not(.selected) {
+					&:enabled:hover,
+					&:enabled:active {
+						color: darken($primary, 20);
+					}
+				}
+			}
+		}
+
+		&:not(.link).primary {
+			background-color: $primary;
+			color: $on-primary;
+		}
+	}
+}
