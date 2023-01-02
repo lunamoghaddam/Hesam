@@ -3,7 +3,7 @@ import { API, TABLES } from '$consts';
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
 	let body = '';
-	const r = await fetch(`${API.BASE_URL}/${API.VERSION}/${TABLES.SERVICES}/query`, {
+	const r = await fetch(`${API.BASE_URL}/${API.VERSION}/databases/${TABLES.SERVICES}/query`, {
 		method: 'POST',
 		headers: API.HEADERS,
 		body,

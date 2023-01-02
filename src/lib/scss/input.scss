@@ -1,0 +1,23 @@
+@import './helpers';
+@import './mixins';
+
+input {
+	@extend .row, .ai-c, .jc-c, .glass;
+	padding: 1rem 2rem;
+	font-weight: 600;
+	outline: none;
+	@include transition(all, 0.3s, ease-in-out);
+	@include placeholder($surface);
+
+	&:disabled {
+		background-color: darken($on-surface, 20);
+		cursor: not-allowed;
+	}
+
+	&:not(:disabled) {
+		&:focus {
+			background-color: rgba($on-surface, 0.9);
+			border-color: darken($on-surface, 35);
+		}
+	}
+}
