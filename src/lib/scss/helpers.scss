@@ -1,13 +1,14 @@
 @import './mixins';
+@import './variables';
 
 .row {
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 .col {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .ai-c {
@@ -45,4 +46,8 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+}
+
+.glass {
+	@include glass-effect($on-surface);
 }

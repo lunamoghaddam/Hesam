@@ -1,40 +1,67 @@
 <script lan="ts">
-  const items = [
-    {
-      title: 'first t',
-      subtitle: 'first s',
-    },
-    {
-      title: 'second t',
-      subtitle: 'second s',
-    },
-    {
-      title: 'third t',
-      subtitle: 'third s',
-    }
-  ]
+	import { page } from '$app/stores';
+	let items = [];
+	$: {
+		if ($page.data?.items?.length) {
+			items = $page.data.items.map((i) => ({
+				title: i.title[0]?.plain_text,
+				icon: i.icon[0]?.plain_text,
+				subtitle: i.subtitle[0]?.plain_text ?? '',
+				color: i.color[0]?.plain_text ?? ''
+			}));
+		}
+	}
 </script>
 
 <div class="service-container">
-{#each items as item}
-  <div class="row">
-    <h3>{ item.title }</h3>
-    <span>{ item.subtitle }</span>
-  </div>
-{/each}
+	{#each items as item}
+		<div class="service">
+			<div class="row jc-e ai-c">
+				<div class="col" style:margin-right="1rem">
+					<h2>{item.title}</h2>
+					<span style:margin-top="1rem">{item.subtitle}</span>
+				</div>
+				<div class="icon-container" style:color={item.color}>
+					<i class="material-icons">{item.icon}</i>
+				</div>
+			</div>
+		</div>
+	{/each}
 </div>
 
 <style lang="scss">
-  .service-container {
-    @extend .col;
+	.service-container {
+		@extend .row;
+		flex-direction: column;
+		flex-wrap: wrap;
+		box-sizing: border-box;
+		padding: 1rem;
 
-    .row {
-      background-color: $on-surface;
-      margin-bottom: 1rem;
+		@include breakpoint(desktop) {
+			flex-direction: row-reverse;
+		}
 
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
+		.service {
+			@extend .col, .glass;
+			padding: 2rem 1rem;
+			margin-bottom: 1rem;
+
+			@include breakpoint(desktop) {
+				margin-right: 1rem;
+				min-width: 320px;
+			}
+
+			h2,
+			span {
+				text-align: right;
+			}
+
+			.icon-container {
+				@extend .row, .ai-c, .jc-c;
+				background-color: darken($on-surface, 10);
+				width: 50px;
+				height: 50px;
+			}
+		}
+	}
 </style>

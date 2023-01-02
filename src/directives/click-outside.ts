@@ -10,7 +10,7 @@ const clickOutside = (node) => {
 	return {
 		destroy() {
 			document.removeEventListener('click', handleClick, true);
-		},
+		}
 	};
 };
 

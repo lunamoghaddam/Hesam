@@ -19,27 +19,27 @@ const config = {
 	preprocess: preprocess({
 		scss: {
 			// to avoid import variables or mixins everytime
-			prependData: `@import 'src/lib/scss/index.scss';`,
+			prependData: `@import 'src/lib/scss/index.scss';`
 		},
-		replace,
+		replace
 	}),
 
 	kit: {
 		adapter: adapter({
-			fallback: 'index.html',
+			fallback: 'index.html'
 		}),
 
 		alias: {
 			$styles: 'src/lib/scss/index.scss',
 			$components: 'src/lib/components',
 			$directives: 'src/directives',
-		},
+			$consts: 'src/lib/consts.ts'
+		}
 	},
 
 	prerender: {
-		default: true,
-	},
+		default: true
+	}
 };
 
 export default config;
-
