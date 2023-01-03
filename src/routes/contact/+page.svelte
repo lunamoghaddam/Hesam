@@ -34,7 +34,7 @@
 
 		<div class="row" style="margin-top: 1rem;">
 			<div class="col" style:flex="1">
-				<h3>شبکه‌های اجتماعی</h3>
+				<h3>شماره‌های تماس</h3>
 				<div class="row">
 					<a class="btn primary" style="margin-right: 1rem;" href="tel:+982188275852">8827-5852</a>
 					<a class="btn primary" style="margin-right: 1rem;" href="tel:+982188287522">8828-7522</a>
@@ -42,7 +42,7 @@
 				</div>
 			</div>
 			<div class="col" style="margin-left: 1rem;">
-				<h3>شماره‌های تماس</h3>
+				<h3>شبکه‌های اجتماعی</h3>
 				<div class="row jc-e">
 					<a class="btn link primary" href="https://t.me/tehranprinter_com">
 						<img
