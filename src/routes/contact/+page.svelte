@@ -16,10 +16,16 @@
 		<!-- contact info -->
 		<div class="col">
 			<h3>اطلاعات تماس</h3>
-			<span>دفتر مرکزی : جلال آل احمد ضلع شمال غربی پل گیشا روبروی خیابان پاتریس پلاک 97 واحد</span>
 			<span
-				>شعبه دوم: تهران - گیشا - خیابان فاضل شمالی - بعد از مسجد ورودی d9 نصر طبقه اول واحد 580</span
+				style="text-align: right; direction: rtl;"
 			>
+				دفتر مرکزی : جلال آل احمد ضلع شمال غربی پل گیشا روبروی خیابان پاتریس پلاک 97 واحد ۷
+			</span>
+			<span
+				style="text-align: right; direction: rtl;"
+			>
+				شعبه دوم: تهران - گیشا - خیابان فاضل شمالی - بعد از مسجد ورودی d9 نصر طبقه اول واحد 580
+			</span>
 		</div>
 
 		<hr />
@@ -78,6 +84,7 @@
 		.side {
 			@extend .col, .glass;
 			flex: 1;
+			overflow: hidden;
 			margin-bottom: 1rem;
 
 			&:last-child {
