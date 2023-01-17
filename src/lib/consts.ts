@@ -1,6 +1,7 @@
 const NOTION_API_SECRET = 'secret_41I3gTloT39TVX1eSPSwaQdGMk7YKAkNBLgR2HeWmDg';
+
 export const API = {
-	BASE_URL: 'https://api.notion.com',
+	BASE_URL: import.meta.env.DEV ? 'http://localhost:8080/api' : 'https://api.notion.com',
 	VERSION: 'v1',
 	HEADERS: {
 		'Notion-Version': '2022-06-28',

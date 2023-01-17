@@ -33,7 +33,8 @@ const config = {
 			$styles: 'src/lib/scss/index.scss',
 			$components: 'src/lib/components',
 			$directives: 'src/directives',
-			$consts: 'src/lib/consts.ts'
+			$consts: 'src/lib/consts.ts',
+			$api: 'src/lib/api/index.ts'
 		}
 	},
 

@@ -7,6 +7,12 @@
 			داده و مثل روز اول تحویلتان می‌دهیم
 		</p>
 		<div class="row jc-e" style:margin-top="1rem">
+			<a
+				class="btn primary"
+				href="/contact"
+				style:margin-right="1rem"
+			>تماس با ما
+			</a>
 			<a class="btn primary" href="/consultation"> درخواست مشاوره رایگان </a>
 		</div>
 	</div>

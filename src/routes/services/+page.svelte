@@ -1,16 +1,19 @@
 <script lan="ts">
-	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
+	import api from '$api';
+
 	let items = [];
-	$: {
-		if ($page.data?.items?.length) {
-			items = $page.data.items.map((i) => ({
+	onMount(async () => {
+		const services = await api.services();
+		if (services?.length) {
+			items = services.map((i) => ({
 				title: i.title[0]?.plain_text,
 				icon: i.icon[0]?.plain_text,
 				subtitle: i.subtitle[0]?.plain_text ?? '',
 				color: i.color[0]?.plain_text ?? ''
 			}));
 		}
-	}
+	});
 </script>
 
 <div class="service-container">

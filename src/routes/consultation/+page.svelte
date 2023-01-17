@@ -1,36 +1,10 @@
 <script lang="ts">
-	import { API, TABLES } from '$consts';
+	import api from '$api';
 	let fullName: string;
 	let phoneNumber: string;
 	const submitRequest = async () => {
 		if (!fullName?.length || !phoneNumber?.length) return;
-		let body = JSON.stringify({
-			parent: {
-				database_id: TABLES.CONSULTATION
-			},
-			properties: {
-				'Full Name': {
-					title: [
-						{
-							text: {
-								content: fullName
-							}
-						}
-					]
-				},
-				'Phone Number': {
-					phone_number: phoneNumber
-				}
-			}
-		});
-
-		const r = await fetch(`${API.BASE_URL}/${API.VERSION}/pages`, {
-			method: 'POST',
-			headers: API.HEADERS,
-			body,
-			redirect: 'follow'
-		});
-
+		const r = await api.consult(fullName, phoneNumber);
 		if (!r?.ok) {
 			// handle error
 			return;
